@@ -1,3 +1,4 @@
+//paintings
 import hand1 from "@/app/assets/pieces/Hand-1.png";
 import hand2 from "@/app/assets/pieces/Hand-2.png";
 import cornrows from "@/app/assets/pieces/Cornrows.png";
@@ -8,9 +9,53 @@ import innocence from "@/app/assets/pieces/Innocence.png";
 import heads from "@/app/assets/pieces/Heads.png";
 import florest from "@/app/assets/pieces/Florest.png";
 import mask from "@/app/assets/pieces/Mask.png";
+import hotel from "@/app/assets/pieces/Hotel.png";
+
+//photos
+import arcoiris from "@/app/assets/Photos/arcoiris.jpg";
+import arcoiris1 from "@/app/assets/Photos/arcoiris-1.jpg";
+import arcoiris2 from "@/app/assets/Photos/arcoiris-2.jpg";
+import arcoiris3 from "@/app/assets/Photos/arcoiris-3.jpg";
+import arcoiris4 from "@/app/assets/Photos/arcoiris-4.jpg";
+import arcoiris5 from "@/app/assets/Photos/arcoiris-5.jpg";
+import arcoiris6 from "@/app/assets/Photos/arcoiris-6.jpg";
+import arcoiris7 from "@/app/assets/Photos/arcoiris-7.jpg";
+
+import aula from "@/app/assets/Photos/aula-1.jpg";
+import aula1 from "@/app/assets/Photos/aula-1.jpg";
+import aula2 from "@/app/assets/Photos/aula-2.jpg";
+
+import janela from "@/app/assets/Photos/janela.jpg";
+
+import mao1 from "@/app/assets/Photos/mao-1.jpg";
+import mao3 from "@/app/assets/Photos/mao-3.jpg";
+import mao4 from "@/app/assets/Photos/mao-4.jpg";
+
+import morango from "@/app/assets/Photos/morango.jpg";
+import morango1 from "@/app/assets/Photos/morango-1.jpg";
+import morango2 from "@/app/assets/Photos/morango-2.jpg";
+
+import noite from "@/app/assets/Photos/noite.jpg";
+import noite1 from "@/app/assets/Photos/noite-1.jpg";
+import noite2 from "@/app/assets/Photos/noite-2.jpg";
+
+import peonia from "@/app/assets/Photos/peonia.jpg";
+import peonia1 from "@/app/assets/Photos/peonia-1.jpg";
+import peonia2 from "@/app/assets/Photos/peonia-2.jpg";
+
+
+
+
+
+
+
+
+
+
 
 
 export{
+ //paintings
 hand1,
 hand2,
 hand3,
@@ -21,9 +66,44 @@ heads,
 florest,
 mask,
 cornrows,
+hotel,
+
+//photos
+arcoiris,
+arcoiris1,
+arcoiris2,
+arcoiris3,
+arcoiris4,
+arcoiris5,
+arcoiris6,
+arcoiris7,
+
+aula,
+aula1,
+aula2,
+
+janela,
+
+mao1,
+mao3,
+mao4,
+
+morango,
+morango1,
+morango2,
+
+noite,
+noite1,
+noite2,
+
+peonia1,
+peonia2,
+
+
 };
 
 export const projects = [
+  // Paintings
   {
     id: 1,                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
     title:'Hand and Mouth',
@@ -48,32 +128,18 @@ export const projects = [
     description: 'The third painting, in contrast, is a portrayal of fierce determination, a hand clenched tightly, embodying power and resilience. Yet despite its strength, it feels trapped in the same darkness, as if fighting against an invisible force that never truly loosens its grip. It represents the relentless effort to overcome the abyss while feeling endlessly stuck within it.',
    
   },
-  {
-    id: 9,
-    title:'Night Florest',
-    category: 'Painting',
-    imageUrl: florest,
-    description: 'This piece holds a deeply personal significance to me. It is a tribute to a cherished memory of my father, who passed away when I was a child. One night, I dreamt of him running through a forest just like this one, full of life and movement, as if time had paused to preserve that fleeting moment. Painting this forest became my way of capturing that dream, preserving it as a memory that I never want to fade. The night forest symbolizes both the mystery of loss and the comfort of remembering. It´s a place where dreams and reality blur, where I can hold onto that brief, precious connection with him.',
-   
-  }, 
-  {
-    id: 6,
-    title:'They All Touched Me',
-    category: 'Painting',
-    imageUrl: heads,
-    description: 'These faces represent the people I allowed to touch me, emotionally and mentally. Each one carries a unique story, a moment that left a mark on me, shaping my perceptions and feelings. The piercing stares convey both the power and fragility of letting someone get close, capturing how each interaction left behind a different sensation, sometimes warmth, sometimes pain.',
-    
-  },
-  {
-    id: 8,
-    title:'Cornrows',
-    category: 'Painting',
-    imageUrl: cornrows,
-    description: 'As an African woman, I have always struggled with the traditional style of cornrows-something that has been an iconic symbol of African beauty and heritage. In my personal experience, I found it difficult to connect with this style. This painting is a reflection of my journey to understand and embrace my roots more fully. By confronting my feelings of rejection, I am beginning to see cornrows not just as a hairstyle, but as a deep cultural and ancestral symbol. It´s a way for me to reconnect with my history, my lineage, and the beauty that flows through generations.',
-   
-  },
+  
   {
     id: 4,
+    title:'They staring at me',
+    category: 'Painting',
+    imageUrl: heads,
+    description: 'They Staring at Me, is about the quiet, trembling act of letting certain people into my life. Not because they earned it. Not because they understood me. But because I let them. It is about the weight of being seen by them not perfectly, but closely enough to matter. The stares in this painting are not just eyes, they are memories and moments. This is not about connection or clarity. It is about vulnerability, the raw, fragile space I gave them access to.',
+    
+  },
+  
+  {
+    id: 5,
     title:'My street',
     category: 'Painting',
     imageUrl: street,
@@ -81,24 +147,175 @@ export const projects = [
     
   },
   {
-    id: 5,
+    id: 6,
     title:'Innocence',
     category: 'Painting',
     imageUrl: innocence,
-    description: 'This painting is a bold and unflinching declaration of liberation and defiance. It features a raw and vulnerable portrait, exposed body, legs wide open, yet the head is concealed beneath a nun´s head covering. The stark contrast between nudity and religious symbolism challenges the viewer to confront the tension between purity and human desire. It symbolizes my journey from repression to self-acceptance, confronting the guilt and shame that religion imprinted. The posture, unapologetically open, is a rebellious statement: I am not the angel, and I refuse to be',
+    description: 'This painting is a bold and unflinching declaration of liberation and defiance. It features a raw and vulnerable portrait, exposed body, legs wide open, yet the head is concealed beneath a nun´s head covering. The stark contrast between nudity and religious symbolism challenges the viewer to confront the tension between purity and human desire. It symbolizes my journey from repression to self-acceptance, confronting the guilt and shame that religion imprinted. The posture, unapologetically open, is a rebellious statement',
     
   },
-  
   {
     id: 7,
-    title:'Mask',
+    title:'Paris Room',
     category: 'Painting',
-    imageUrl: mask,
-    description: 'This painting honors the strength and tradition of African masks, using yellow, black, white, and red to symbolize energy, resilience, spirituality, and passion. The masks represent a deep connection to heritage and culture, reflecting the power of ancestral expression. Through this piece, I reconnect with my roots, celebrating the boldness and beauty of African identity.',
+    imageUrl: hotel,
+    description: 'Paris Room is a quiet portrait of someone who once meant a great deal to me. Painted in soft whites and muted tones, it captures a fleeting, intimate moment, him sleeping, unaware, in the stillness of a bed. There is a gentle distance in the composition, like watching a memory fade in slow motion, The choice of a white palette was deliberate, white as absence, white as softness, white as everything we did not say. This piece holds a certain kind of peace, but also the weight of transience. It is about being close and loved by someone and still knowing they can not be there forever. This painting is more about how it felt to be there. To witness, to care, and to let go.',
+    
+  },
+  {
+    id: 8,
+    title:'Childhood',
+    category: 'Painting',
+    imageUrl: sky,
+    description: 'This painting captures the pure innocence and freedom of childhood, with naked children jumping freely in the blue sky. They represents the untainted, unburdened nature of youth, where joy is found in simple, unspoken moments. The sky, vast and endless, symbolizes heaven itself an ethereal space where innocence is free to soar without limits. In this piece, I explore the beauty of being untouched by the complexities of life, reminding us of the purity we are born with.',
+    
+  },
+  {
+    id: 9,
+    title:'Cornrows',
+    category: 'Painting',
+    imageUrl: cornrows,
+    description: 'As an African woman, I have always struggled with the traditional style of cornrows-something that has been an iconic symbol of African beauty and heritage. In my personal experience, I found it difficult to connect with this style. This painting is a reflection of my journey to understand and embrace my roots more fully. By confronting my feelings of rejection, I am beginning to see cornrows not just as a hairstyle, but as a deep cultural and ancestral symbol. It´s a way for me to reconnect with my history, my lineage, and the beauty that flows through generations.',
+   
+  },
+  {
+    id: 10,
+    title:'Night Florest',
+    category: 'Painting',
+    imageUrl: florest,
+    description: 'This piece holds a deeply personal significance to me. It is a tribute to a cherished memory of my father, who passed away. One night, I dreamt of him running through a forest just like this one, full of life and movement, as if time had paused to preserve that fleeting moment. Painting this forest became my way of capturing that dream, preserving it as a memory that I never want to fade. The night forest symbolizes both the mystery of loss and the comfort of remembering. It´s a place where dreams and reality blur, where I can hold onto that brief, precious connection with him.',
+   
+  }, 
+  
+
+  // Photos
+  
+  
+  {
+    id: 13,
+    title:'Rainbow on my hand',
+    category: 'Inspirations',
+    imageUrl: arcoiris2,
+    description: 'Rainbow on my hand',
+   
+  },
+  {
+    id: 14,
+    title:'Rainbow on my hand',
+    category: 'Inspirations',
+    imageUrl: arcoiris3,
+    description: 'Rainbow on my hand',
    
   },
   
- 
-  // Add more projects here...
+  
+  
+  {
+    id: 19,
+    title:'Classroom',
+    category: 'Inspirations',
+    imageUrl: aula,
+    description: 'Classroom',
+   
+  },
+
+  {
+    id: 21,
+    title:'Gliter',
+    category: 'Inspirations',
+    imageUrl: mao3,
+    description: 'Glitter',
+   
+  },
+  {
+    id: 23,
+    title:'Glitter',
+    category: 'Inspirations',
+    imageUrl: mao4,
+    description: 'Glitter',
+   
+  },
+  {
+    id: 24,
+    title:'Strawberries',
+    category: 'Inspirations',
+    imageUrl: morango1,
+    description: 'Straberries',
+   
+  },
+  {
+    id: 25,
+    title:'Strawberries',
+    category: 'Inspirations',
+    imageUrl: morango,
+    description: 'Strawberries',
+   
+  },
+  {
+    id: 26,
+    title:'Strawberries',
+    category: 'Inspirations',
+    imageUrl: morango2,
+    description: 'Strawberries',
+   
+  },
+  {
+    id: 27,
+    title:'Bohemian City',
+    category: 'Inspirations',
+    imageUrl: noite,
+    description: 'Bohemian City',
+   
+  },
+  {
+    id: 28,
+    title:'Bohemian City',
+    category: 'Inspirations',
+    imageUrl: noite1,
+    description: 'Bohemian City',
+   
+  },
+  {
+    id: 29,
+    title:'Boheamian City',
+    category: 'Inspirations',
+    imageUrl: noite2,
+    description: 'Bohemian City',
+   
+  },
+  {
+    id: 30,
+    title:'Margaridas',
+    category: 'Inspirations',
+    imageUrl: peonia,
+    description: 'Margaridas',
+   
+  },
+  {
+    id: 31,
+    title:'Margaridas',
+    category: 'Inspirations',
+    imageUrl: peonia2,
+    description: 'Margaridas',
+   
+  },
+  {
+    id: 33,
+    title:'Window',
+    category: 'Inspirations',
+    imageUrl: janela,
+    description: 'Window',
+   
+  },
+
+
+
+
+  // Drawings
+  // Videos
+  // Sketch
+  // Music
+  // Design
+
 ];
-export const categories = ['All', 'Painting', 'Drawings','Photography','Videos', 'Sketch', 'Music', 'Design', ];
+export const categories = ['All', 'Painting', 'Drawings','Inspirations','Videos', 'Sketch', 'Music', 'Design', ];

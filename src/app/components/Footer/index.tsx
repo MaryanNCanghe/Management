@@ -10,10 +10,10 @@ const Footer = () => {
           <a href="mailto:mariancanghe@icloud.com">mariancanghe@icloud.com</a>
         </p>
         <div className={classes.socialLinks}>
-          <a href="https://instagram.com/your-instagram" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/_maryancanghe/" target="_blank" rel="noopener noreferrer">
             Instagram
           </a>
-          <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/MaryanNCanghe" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
         </div>
