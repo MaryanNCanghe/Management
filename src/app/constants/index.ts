@@ -199,7 +199,7 @@ export const projects = [
     title:'Home',
     category: 'Painting',
     imageUrl: home,
-    description: 'This piece holds a deeply personal significance to me. It is a tribute to a cherished memory of my father, who passed away. One night, I dreamt of him running through a forest just like this one, full of life and movement, as if time had paused to preserve that fleeting moment. Painting this forest became my way of capturing that dream, preserving it as a memory that I never want to fade. The night forest symbolizes both the mystery of loss and the comfort of remembering. It´s a place where dreams and reality blur, where I can hold onto that brief, precious connection with him.',
+    description: 'This painting captures the emotional weight of being alone with yourself. It is about the quiet moments when time stretches, and feelings shift without words. Is about being with myself in a place I know deeply, y home. It is where I feel safe, where I let my guard down. That is why I am naked in each version, because I belong to this space, and it belongs to me.Each figure shows a different version of me, tired, distant, lost in thought, or simply existing. The window blends into the wall, there is no clear way out, no obvious separation between inside and outside.',
    
   }, 
   
