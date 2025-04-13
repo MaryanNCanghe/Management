@@ -10,7 +10,7 @@ import heads from "@/app/assets/pieces/Heads.png";
 import florest from "@/app/assets/pieces/Florest.png";
 import mask from "@/app/assets/pieces/Mask.png";
 import hotel from "@/app/assets/pieces/Hotel.png";
-
+import home from "@/app/assets/pieces/home.png";
 //photos
 import arcoiris2 from "@/app/assets/Photos/arcoiris-2.jpg";
 import arcoiris3 from "@/app/assets/Photos/arcoiris-3.jpg";
@@ -36,11 +36,20 @@ import peonia from "@/app/assets/Photos/peonia.jpg";
 import peonia2 from "@/app/assets/Photos/peonia-2.jpg";
 
 
-
-
-
-
-
+//sketch
+import sketch from "@/app/assets/sketch/sketch.png";
+import sketch2 from "@/app/assets/sketch/sketch2.png";
+import sketch3 from "@/app/assets/sketch/sketch3.png";
+import sketch4 from "@/app/assets/sketch/sketch4.png";
+import sketch5 from "@/app/assets/sketch/sketch5.png";
+import sketch6 from "@/app/assets/sketch/sketch6.png";
+import sketch8 from "@/app/assets/sketch/sketch8.png";
+import sketch9 from "@/app/assets/sketch/sketch9.png";
+import sketch10 from "@/app/assets/sketch/sketch10.png";
+import sketch11 from "@/app/assets/sketch/sketch11.png";
+import sketch12 from "@/app/assets/sketch/sketch12.png";
+import sketch13 from "@/app/assets/sketch/sketch13.png";
+import rendezveux from "@/app/assets/sketch/rendezveux.png";
 
 
 
@@ -59,6 +68,7 @@ florest,
 mask,
 cornrows,
 hotel,
+home,
 
 //photos
 arcoiris2,
@@ -81,6 +91,21 @@ noite1,
 noite2,
 
 peonia2,
+
+//sketch
+sketch,
+sketch3,
+sketch2,
+sketch4,
+sketch5,
+sketch6,
+sketch8,
+sketch9,
+sketch10,
+sketch11,
+sketch12,
+sketch13,
+rendezveux,
 
 
 };
@@ -169,6 +194,14 @@ export const projects = [
     description: 'This piece holds a deeply personal significance to me. It is a tribute to a cherished memory of my father, who passed away. One night, I dreamt of him running through a forest just like this one, full of life and movement, as if time had paused to preserve that fleeting moment. Painting this forest became my way of capturing that dream, preserving it as a memory that I never want to fade. The night forest symbolizes both the mystery of loss and the comfort of remembering. It´s a place where dreams and reality blur, where I can hold onto that brief, precious connection with him.',
    
   }, 
+  {
+    id: 11,
+    title:'Home',
+    category: 'Painting',
+    imageUrl: home,
+    description: 'This piece holds a deeply personal significance to me. It is a tribute to a cherished memory of my father, who passed away. One night, I dreamt of him running through a forest just like this one, full of life and movement, as if time had paused to preserve that fleeting moment. Painting this forest became my way of capturing that dream, preserving it as a memory that I never want to fade. The night forest symbolizes both the mystery of loss and the comfort of remembering. It´s a place where dreams and reality blur, where I can hold onto that brief, precious connection with him.',
+   
+  }, 
   
 
   // Photos
@@ -179,7 +212,7 @@ export const projects = [
     title:'Rainbow on my hand',
     category: 'Inspirations',
     imageUrl: arcoiris2,
-    description: 'Rainbow on my hand',
+    description: 'Rainbow on my hand 2017',
    
   },
   {
@@ -187,7 +220,7 @@ export const projects = [
     title:'Rainbow on my hand',
     category: 'Inspirations',
     imageUrl: arcoiris3,
-    description: 'Rainbow on my hand',
+    description: 'Rainbow on my hand 2017',
    
   },
   
@@ -197,8 +230,8 @@ export const projects = [
     id: 19,
     title:'Classroom',
     category: 'Inspirations',
-    imageUrl: aula,
-    description: 'Classroom',
+    description: 'Classroom 2016',
+    imageUrl: aula1 ,
    
   },
 
@@ -207,7 +240,7 @@ export const projects = [
     title:'Gliter',
     category: 'Inspirations',
     imageUrl: mao3,
-    description: 'Glitter',
+    description: 'Glitter 2016',
    
   },
   {
@@ -215,7 +248,7 @@ export const projects = [
     title:'Glitter',
     category: 'Inspirations',
     imageUrl: mao4,
-    description: 'Glitter',
+    description: 'Glitter 2016',
    
   },
   {
@@ -223,7 +256,7 @@ export const projects = [
     title:'Strawberries',
     category: 'Inspirations',
     imageUrl: morango1,
-    description: 'Straberries',
+    description: 'Straberries 2016',
    
   },
   {
@@ -231,7 +264,7 @@ export const projects = [
     title:'Strawberries',
     category: 'Inspirations',
     imageUrl: morango,
-    description: 'Strawberries',
+    description: 'Strawberries 2016',
    
   },
   {
@@ -239,7 +272,7 @@ export const projects = [
     title:'Strawberries',
     category: 'Inspirations',
     imageUrl: morango2,
-    description: 'Strawberries',
+    description: 'Strawberries 2016',
    
   },
   {
@@ -247,7 +280,7 @@ export const projects = [
     title:'Bohemian City',
     category: 'Inspirations',
     imageUrl: noite,
-    description: 'Bohemian City',
+    description: 'Bohemian City 2019',
    
   },
   {
@@ -255,7 +288,7 @@ export const projects = [
     title:'Bohemian City',
     category: 'Inspirations',
     imageUrl: noite1,
-    description: 'Bohemian City',
+    description: 'Bohemian City 2019',
    
   },
   {
@@ -263,7 +296,7 @@ export const projects = [
     title:'Boheamian City',
     category: 'Inspirations',
     imageUrl: noite2,
-    description: 'Bohemian City',
+    description: 'Bohemian City 2019',
    
   },
   {
@@ -271,7 +304,7 @@ export const projects = [
     title:'Margaridas',
     category: 'Inspirations',
     imageUrl: peonia,
-    description: 'Margaridas',
+    description: 'Margaridas 2018',
    
   },
   {
@@ -279,7 +312,7 @@ export const projects = [
     title:'Margaridas',
     category: 'Inspirations',
     imageUrl: peonia2,
-    description: 'Margaridas',
+    description: 'Margaridas 2018',
    
   },
   {
@@ -287,18 +320,123 @@ export const projects = [
     title:'Window',
     category: 'Inspirations',
     imageUrl: janela,
-    description: 'Window',
+    description: 'Window 2022',
    
   },
 
+// Sketch
+{
+  id: 34,
+  title:'Rendezveux',
+  category: 'Sketch',
+  imageUrl: rendezveux,
+  description: 'rendezveux',
+ 
+},
+{
+  id: 35,
+  title:'',
+  category: 'Sketch',
+  imageUrl: sketch,
+  description: '',
+ 
+},
+{
+  id: 36,
+  title:'',
+  category: 'Sketch',
+  imageUrl: sketch3,
+  description: '',
+ 
+},
+{
+  id: 37,
+  title:'',
+  category: 'Sketch',
+  imageUrl: sketch4,
+  description: '',
+ 
+},
+{
+  id: 38,
+  title:'',
+  category: 'Sketch',
+  imageUrl: sketch5,
+  description: '',
+ 
+},
+{
+  id: 39,
+  title:'',
+  category: 'Sketch',
+  imageUrl: sketch6,
+  description: '',
+ 
+},
+{
+  id: 41,
+  title:'',
+  category: 'Sketch',
+  imageUrl: sketch8,
+  description: '',
+ 
+},
+{
+  id: 42,
+  title:'',
+  category: 'Sketch',
+  imageUrl: sketch9,
+  description: '',
+ 
+},
+{
+  id: 43,
+  title:'',
+  category: 'Sketch',
+  imageUrl: sketch12,
+  description: '',
+ 
+},
+{
+  id: 44,
+  title:'',
+  category: 'Sketch',
+  imageUrl: sketch11,
+  description: '',
+ 
+},
+{
+  id: 45,
+  title:'',
+  category: 'Sketch',
+  imageUrl: sketch10,
+  description: '',
+ 
+},
+{
+  id: 46,
+  title:'',
+  category: 'Sketch',
+  imageUrl: sketch13,
+  description: '',
+ 
+},
+{
+  id: 47,
+  title:'',
+  category: 'Sketch',
+  imageUrl: sketch2,
+  description: '',
+ 
+},
 
 
 
-  // Drawings
+
   // Videos
-  // Sketch
+ 
   // Music
   // Design
 
 ];
-export const categories = ['All', 'Painting', 'Drawings','Inspirations','Videos', 'Sketch', 'Music', 'Design', ];
+export const categories = ['All', 'Painting','Inspirations','Videos', 'Sketch', 'Music', 'Design', ];

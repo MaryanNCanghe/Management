@@ -16,6 +16,9 @@ const Footer = () => {
           <a href="https://github.com/MaryanNCanghe" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
+          <a href="https://soundcloud.com/hakuna-matata-342506249" target="_blank" rel="noopener noreferrer">
+            Soundcloud
+          </a>
         </div>
         <p className={classes.copyright}>
           &copy; {new Date().getFullYear()} Maria N'canghe. All Rights Reserved.
