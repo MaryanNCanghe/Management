@@ -12,18 +12,11 @@ import mask from "@/app/assets/pieces/Mask.png";
 import hotel from "@/app/assets/pieces/Hotel.png";
 
 //photos
-import arcoiris from "@/app/assets/Photos/arcoiris.jpg";
-import arcoiris1 from "@/app/assets/Photos/arcoiris-1.jpg";
 import arcoiris2 from "@/app/assets/Photos/arcoiris-2.jpg";
 import arcoiris3 from "@/app/assets/Photos/arcoiris-3.jpg";
-import arcoiris4 from "@/app/assets/Photos/arcoiris-4.jpg";
-import arcoiris5 from "@/app/assets/Photos/arcoiris-5.jpg";
-import arcoiris6 from "@/app/assets/Photos/arcoiris-6.jpg";
-import arcoiris7 from "@/app/assets/Photos/arcoiris-7.jpg";
 
-import aula from "@/app/assets/Photos/aula-1.jpg";
+
 import aula1 from "@/app/assets/Photos/aula-1.jpg";
-import aula2 from "@/app/assets/Photos/aula-2.jpg";
 
 import janela from "@/app/assets/Photos/janela.jpg";
 
@@ -40,7 +33,6 @@ import noite1 from "@/app/assets/Photos/noite-1.jpg";
 import noite2 from "@/app/assets/Photos/noite-2.jpg";
 
 import peonia from "@/app/assets/Photos/peonia.jpg";
-import peonia1 from "@/app/assets/Photos/peonia-1.jpg";
 import peonia2 from "@/app/assets/Photos/peonia-2.jpg";
 
 
@@ -69,18 +61,10 @@ cornrows,
 hotel,
 
 //photos
-arcoiris,
-arcoiris1,
 arcoiris2,
 arcoiris3,
-arcoiris4,
-arcoiris5,
-arcoiris6,
-arcoiris7,
 
-aula,
 aula1,
-aula2,
 
 janela,
 
@@ -96,7 +80,6 @@ noite,
 noite1,
 noite2,
 
-peonia1,
 peonia2,
 
 
