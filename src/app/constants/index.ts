@@ -142,7 +142,7 @@ export const projects = [
     title:'They staring at me',
     category: 'Painting',
     imageUrl: heads,
-    description: 'They Staring at Me, is about the quiet, trembling act of letting certain people into my life. Not because they earned it. Not because they understood me. But because I let them. It is about the weight of being seen by them not perfectly, but closely enough to matter. The stares in this painting are not just eyes, they are memories and moments. This is not about connection or clarity. It is about vulnerability, the raw, fragile space I gave them access to.',
+    description: 'They Staring at Me, is about the quiet, trembling act of desires. It is about the weight of being seen by them not perfectly, but closely enough to matter. The stares in this painting are not just eyes, they are moments. This is not about connection or clarity. It is about vulnerability, the raw, fragile space I was.',
     
   },
   
@@ -159,7 +159,7 @@ export const projects = [
     title:'Innocence',
     category: 'Painting',
     imageUrl: innocence,
-    description: 'This painting is a bold and unflinching declaration of liberation and defiance. It features a raw and vulnerable portrait, exposed body, legs wide open, yet the head is concealed beneath a nun´s head covering. The stark contrast between nudity and religious symbolism challenges the viewer to confront the tension between purity and human desire. It symbolizes my journey from repression to self-acceptance, confronting the guilt and shame that religion imprinted. The posture, unapologetically open, is a rebellious statement',
+    description: 'This painting is a bold and unflinching declaration of liberation and defiance. It features a raw and vulnerable portrait, exposed body, yet the head is concealed beneath a nun´s head covering. The stark contrast between nudity and religious symbolism challenges the viewer to confront the tension between purity and human desire. It symbolizes my journey from repression to self-acceptance, confronting the guilt and shame that religion imprinted. The posture, unapologetically open, is a rebellious statement',
     
   },
   {
