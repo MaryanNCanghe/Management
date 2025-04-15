@@ -34,20 +34,19 @@
       }
     }
 
-    // **🔽 Responsive Fixes**
     @media (max-width: 768px) {
       flex-wrap: wrap;
       justify-content: center;
 
       .categoryButton {
-        flex: 1 1 150px; // Ensures equal width on small screens
-        max-width: 150px; // Keeps buttons aligned
+        flex: 1 1 150px;
+        max-width: 150px;
       }
     }
 
     @media (max-width: 480px) {
       .categoryButton {
-        flex: 1 1 120px; // Smaller width for very small screens
+        flex: 1 1 120px;
         max-width: 120px;
         font-size: 0.9rem;
       }
@@ -71,9 +70,9 @@
       padding: 10px;
 
       .image {
-        width: 300px;  // ✅ Fixed image size
-        height: 200px; // ✅ Prevents different image dimensions
-        object-fit: cover; // ✅ Ensures images fill the box
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
         border-bottom: 1px solid #ddd;
       }
 
@@ -176,13 +175,21 @@
   .modalContent {
     max-width: 95%;
     max-height: 95%;
-  }
-
-  .modalMedia {
+    display: flex;
     flex-direction: column;
   }
 
+  .modalMedia {
+    flex: 3; // Image section takes more space
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
   .modalDescription {
+    flex: 1; // Description takes less space
+    font-size: 0.85rem;
     margin-top: 10px;
+    padding: 5px 10px;
   }
 }
