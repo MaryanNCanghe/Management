@@ -34,11 +34,11 @@ const Hero = () => {
         <p>Explore my journey in Arts and discover my creative projects.</p>
 
         <div className={classes.buttonContainer}>
-          <a
+         // <a
             //href="/resume.pdf" 
-            download
-            className={classes.cvButton}
-          >
+            //download
+            //className={classes.cvButton}
+         // >
             Download CV
           </a>
         </div>
