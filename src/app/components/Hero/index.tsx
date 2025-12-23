@@ -35,7 +35,7 @@ const Hero = () => {
 
         <div className={classes.buttonContainer}>
           <a
-            href="/resume.pdf" 
+            //href="/resume.pdf" 
             download
             className={classes.cvButton}
           >
