@@ -50,7 +50,7 @@ const About = () => {
         <h4>VISION</h4>
       </div>
        <div> <p>
-         I bring hands‑on experience in social media management, content creation, 
+         I bring hands on experience in social media management, content creation, 
          and brand storytelling, developed through managing personal and client projects across social media. I create visually cohesive content using digital design tools, 
         ensuring that every post aligns with brand identity and communicates with clarity and aesthetic intention.
         My background in art and design strengthens my visual judgment, allowing me to craft layouts, banners, 

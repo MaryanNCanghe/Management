@@ -15,7 +15,7 @@ import StepTimeline from './component/StepTimeline';
 
 export default function ExecutiveSupportPage() {
   return (
-    <main className={`${s.container} light` /* remove 'light' for dark theme */}>
+    <main className={`${s.container} dark` /* remove 'light' for dark theme */}>
       <header className={s.header}>
         <div>
           <h1 className={s.title}>Executive Support</h1>

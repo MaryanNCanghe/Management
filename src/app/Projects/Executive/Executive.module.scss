@@ -69,6 +69,9 @@
 }
 
 /* ---------- PANEL CARD ---------- */
+/* Safari < 16 does NOT support overflow: clip */
+/* Fallback: overflow: hidden */
+/* Enhancement gated using @supports (overflow: clip) */
 .panel {
   grid-column: span 12;
   background: linear-gradient(180deg, rgba(255,255,255,.02), transparent),
@@ -78,9 +81,18 @@
   padding: clamp(16px, 2.2vw, 24px);
   box-shadow: var(--shadow);
   position: relative;
-  overflow: clip;
+
+  /* fallback first */
+  overflow: hidden;
+
   transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
+@supports (overflow: clip) {
+  .panel {
+    overflow: clip;
+  }
+}
+
 .panel:hover { transform: translateY(-1px); }
 
 /* ---------- TYPE HELPERS ---------- */
@@ -136,31 +148,53 @@
 .kpi {
   --pill-bg: rgba(116,176,244,.14);
   --pill-fg: var(--brand);
+
   padding: 10px 14px;
   border-radius: 999px;
   background: var(--pill-bg);
   color: var(--pill-fg);
-  border: 1px solid color-mix(in oklab, var(--pill-fg), transparent 70%);
+
+  /* fallback (old browsers ignore color-mix entirely) */
+  border: 1px solid rgba(255,255,255,0.12);
+
   font-weight: 600;
   font-feature-settings: "tnum";
+
+  /* enhancement for modern browsers */
+  @supports (color: color-mix(in oklab, white, black)) {
+    border-color: color-mix(in oklab, var(--pill-fg), transparent 70%);
+  }
 }
+
 .kpi.success { --pill-bg: rgba(123,211,137,.14); --pill-fg: var(--brand-2); }
 .kpi.warn    { --pill-bg: rgba(255,197,97,.14);  --pill-fg: var(--warn); }
 .kpi.danger  { --pill-bg: rgba(255,122,122,.14); --pill-fg: var(--danger); }
 
 /* ---------- METRIC BAR ---------- */
 .metric { display: grid; gap: 8px; }
+
 .metricLabel {
-  display: flex; justify-content: space-between; color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
   font-weight: 600;
 }
+
 .bar {
   height: 10px;
   border-radius: 20px;
-  background: color-mix(in oklab, var(--ink), transparent 92%);
+
+  /* fallback */
+  background: rgba(232,238,249,0.08);
+
+  @supports (color: color-mix(in oklab, white, black)) {
+    background: color-mix(in oklab, var(--ink), transparent 92%);
+  }
+
   position: relative;
   overflow: hidden;
 }
+
 .fill {
   height: 100%;
   background: linear-gradient(90deg, var(--brand), var(--brand-2));
@@ -170,7 +204,7 @@
   transition: width .6s cubic-bezier(.2,.8,.2,1);
 }
 
-/* ---------- TIMELINE (StepTimeline) ---------- */
+/* ---------- TIMELINE ---------- */
 .timeline {
   position: relative;
   margin-left: 2px;
@@ -189,31 +223,45 @@
   padding: 12px 0;
 }
 .dot {
-  width: 12px; height: 12px; border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
   margin-top: 6px;
   background: radial-gradient(circle at 35% 35%, #fff, var(--brand));
   outline: 3px solid rgba(116,176,244,.18);
 }
 
-/* ---------- BADGE SUBTABS (optional) ---------- */
+/* ---------- BADGE SUBTABS ---------- */
 .badges {
-  display: flex; gap: 8px; flex-wrap: wrap; margin: 4px 0 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 4px 0 14px;
 }
+
 .badge {
-  padding: 8px 12px; border-radius: 999px;
+  padding: 8px 12px;
+  border-radius: 999px;
   border: 1px solid var(--grid);
   color: var(--muted);
   cursor: pointer;
   user-select: none;
   transition: .2s ease;
 }
+
 .badge[aria-selected="true"] {
   background: rgba(116,176,244,.12);
   color: var(--ink);
-  border-color: color-mix(in oklab, var(--brand), transparent 70%);
+
+  /* fallback */
+  border-color: rgba(255,255,255,0.12);
+
+  @supports (color: color-mix(in oklab, white, black)) {
+    border-color: color-mix(in oklab, var(--brand), transparent 70%);
+  }
 }
 
-/* ---------- ACCESSIBILITY / REDUCED MOTION ---------- */
+/* ---------- REDUCED MOTION ---------- */
 @media (prefers-reduced-motion: reduce) {
   .panel,
   .chev,
@@ -227,7 +275,6 @@
   .container { background: #fff; color: #000; }
   .panel { box-shadow: none; border-color: #e5e7eb; }
 }
-
 
 .forceRow {
   display: grid;

@@ -110,8 +110,17 @@
   padding: clamp(16px, 2.2vw, 24px);
   box-shadow: var(--shadow);
   position: relative;
-  overflow: clip;
+
+  /* 🛡 Fallback for iOS Safari <16 (no overflow: clip support) */
+  overflow: hidden;
+
   transition: transform .18s ease, border-color .2s ease, box-shadow .3s ease;
+}
+
+@supports (overflow: clip) {
+  .dashboardCard {
+    overflow: clip;
+  }
 }
 
 .dashboardCard:hover { transform: translateY(-1px); }
@@ -176,7 +185,7 @@
 }
 
 /* ============================================================
-   EXECUTIVE KPI PRO (dark premium)
+   EXECUTIVE KPI PRO
    ============================================================ */
 
 .kpiProGrid {
@@ -235,28 +244,36 @@
 .kpiRed    { --kpi-color: var(--danger); }
 .kpiPurple { --kpi-color: var(--purple); }
 
-/* Mini trend row (icon + label) */
+/* Mini trend row */
 .miniKPI {
   display: inline-flex;
   align-items: center;
   gap: 8px;
 }
+
 .miniCircle {
   width: 10px; height: 10px; border-radius: 50%;
   background: var(--shape-color, var(--brand));
-  box-shadow: 0 0 0 3px color-mix(in oklab, var(--shape-color, var(--brand)), transparent 80%);
+
+  /* 🛡 Fallback */
+  box-shadow: 0 0 0 3px rgba(0,0,0,.3);
+
+  /* 🎨 Enhanced */
+  @supports (color: color-mix(in oklab, white, black)) {
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--shape-color, var(--brand)), transparent 80%);
+  }
 }
 
-/* Sparkline placeholder (optional) */
+/* Sparkline placeholder */
 .sparklinePlaceholder {
   width: 100%; height: 32px; border-radius: 6px;
   background: linear-gradient(90deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
   border: 1px dashed rgba(255,255,255,.06);
 }
 
-/* Tiny CSS donut (set --p: percent 0..100) */
+/* Tiny CSS donut */
 .miniDonut {
-  --p: 72; /* percentage */
+  --p: 72;
   --size: 54px;
   --track: rgba(255,255,255,.08);
   --fill: var(--kpi-color, var(--brand));
@@ -268,6 +285,7 @@
   position: relative;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.05);
 }
+
 .miniDonutLabel {
   position: absolute; inset: 0; display: grid; place-items: center;
   font-size: 12px; font-weight: 700; color: var(--ink);
@@ -285,12 +303,12 @@
 .shapeSquare { border-radius: 3px; }
 .shapeDiamond { transform: rotate(45deg); }
 
-/* Old list markup — upgrade to tiles visually (no TSX changes needed) */
 .listContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: clamp(14px, 2vw, 22px);
 }
+
 .listItem {
   display: grid;
   grid-template-columns: 16px 1fr;
@@ -306,7 +324,7 @@
   box-shadow: var(--shadow);
 }
 
-/* New info-tile API (if you switch your TSX later) */
+/* Info-tile API */
 .biInfoGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -329,7 +347,7 @@
 .biInfoValue { font-size: 18px; font-weight: 800; color: var(--blue); }
 
 /* ============================================================
-   FILTER TOOLBAR (dark glassy controls)
+   FILTER TOOLBAR
    ============================================================ */
 
 .filterToolbar { display: grid; gap: 18px; }
@@ -356,11 +374,27 @@
   transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
 }
-.input:hover, .select:hover { border-color: color-mix(in oklab, var(--brand), black 40%); }
+
+/* input/select hover fix */
+.input:hover, .select:hover {
+  /* fallback */
+  border-color: rgba(0,0,0,.4);
+
+  @supports (color: color-mix(in oklab, white, black)) {
+    border-color: color-mix(in oklab, var(--brand), black 40%);
+  }
+}
+
 .input:focus, .select:focus {
   outline: none;
   border-color: var(--brand);
-  box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand), transparent 75%);
+
+  /* fallback */
+  box-shadow: 0 0 0 3px rgba(0,0,0,.3);
+
+  @supports (color: color-mix(in oklab, white, black)) {
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand), transparent 75%);
+  }
 }
 
 /* Select arrow */
@@ -384,18 +418,48 @@
   transition: background .15s ease, border-color .15s ease, box-shadow .15s ease, color .15s ease;
   position: relative;
 }
-.checkboxPill:hover { border-color: color-mix(in oklab, var(--brand), black 40%); }
+
+.checkboxPill:hover {
+  /* fallback */
+  border-color: rgba(0,0,0,.4);
+
+  @supports (color: color-mix(in oklab, white, black)) {
+    border-color: color-mix(in oklab, var(--brand), black 40%);
+  }
+}
+
 .checkboxPill[data-checked="true"] {
-  background: color-mix(in oklab, var(--brand), transparent 82%);
+  /* fallback */
+  background: rgba(90,169,230,.25);
+
+  @supports (color: color-mix(in oklab, white, black)) {
+    background: color-mix(in oklab, var(--brand), transparent 82%);
+  }
+
   border-color: var(--brand);
   color: #eaf6ff;
-  box-shadow: 0 4px 18px color-mix(in oklab, var(--brand), transparent 78%);
+
+  /* fallback */
+  box-shadow: 0 4px 18px rgba(0,0,0,.3);
+
+  @supports (color: color-mix(in oklab, white, black)) {
+    box-shadow: 0 4px 18px color-mix(in oklab, var(--brand), transparent 78%);
+  }
 }
+
 .checkboxPill:focus-within {
-  outline: none; border-color: var(--brand);
-  box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand), transparent 75%);
+  outline: none;
+  border-color: var(--brand);
+
+  /* fallback */
+  box-shadow: 0 0 0 3px rgba(0,0,0,.3);
+
+  @supports (color: color-mix(in oklab, white, black)) {
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand), transparent 75%);
+  }
 }
-/* hide native checkbox but keep accessible */
+
+/* hide native checkbox */
 .checkboxPill input {
   position: absolute; opacity: 0; width: 1px; height: 1px;
   overflow: hidden; clip-path: inset(50%); white-space: nowrap;
@@ -417,11 +481,13 @@
   box-shadow: var(--shadow);
   margin-bottom: 14px;
 }
+
 .salesTrendCard::before {
   content: ""; display: block; height: 4px; width: 64px;
   background: linear-gradient(90deg, var(--blue), transparent);
   border-radius: 6px; margin-bottom: 10px;
 }
+
 .salesTrendTitle {
   font-size: 16px; font-weight: 800; color: var(--ink); margin-bottom: 10px;
 }
@@ -444,10 +510,12 @@
   font-size: 14px;
   color: var(--ink);
 }
+
 .table thead {
   background: linear-gradient(180deg, rgba(255,255,255,.02), transparent);
   border-bottom: 1px solid var(--grid);
 }
+
 .table th {
   padding: 12px 14px;
   font-weight: 800;
@@ -455,11 +523,13 @@
   text-transform: uppercase;
   letter-spacing: .4px;
 }
+
 .table td {
   padding: 12px 14px;
   border-bottom: 1px solid rgba(255,255,255,.06);
   color: var(--ink);
 }
+
 .table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
 .table tr:hover td { background: rgba(90,169,230,.05); }
 

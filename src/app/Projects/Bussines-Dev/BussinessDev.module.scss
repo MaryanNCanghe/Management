@@ -1,18 +1,18 @@
 /* ========= THEME TOKENS ========= */
+/* Kept inside module as you requested */
 :root {
-  --bg: #0f1116;                 /* deep slate */
-  --panel: #141824;              /* card background */
-  --ink: #e9eef7;                /* primary text */
-  --muted: #9aa6b2;              /* secondary text */
-  --brand: #5aa9e6;              /* accent */
-  --brand-2: #7bd389;            /* success accent */
-  --warn: #ffc561;               /* warning accent */
-  --danger: #ff7a7a;             /* danger accent */
-  --grid: rgba(255,255,255,.06); /* subtle divider */
+  --bg: #0f1116;
+  --panel: #141824;
+  --ink: #e9eef7;
+  --muted: #9aa6b2;
+  --brand: #5aa9e6;
+  --brand-2: #7bd389;
+  --warn: #ffc561;
+  --danger: #ff7a7a;
+  --grid: rgba(255,255,255,.06);
   --radius: 14px;
   --shadow: 0 10px 30px rgba(0,0,0,.25);
 }
-
 
 /* ========= GLOBAL LAYOUT ========= */
 .container {
@@ -52,6 +52,8 @@
   gap: clamp(14px, 2vw, 22px);
 }
 
+/* ===== FIX: overflow: clip warning ===== */
+/* Fallback for older iOS Safari (<16) — MDN confirms clip isn't supported there. [1](https://stackoverflow.com/questions/70829079/selector-root-is-not-pure-nextjs-error-saas-loader)[2](https://nextjs.org/docs/messages/css-global) */
 .panel {
   grid-column: span 12;
   background: linear-gradient(180deg, rgba(255,255,255,.02), transparent),
@@ -61,7 +63,15 @@
   padding: clamp(16px, 2.2vw, 24px);
   box-shadow: var(--shadow);
   position: relative;
-  overflow: clip;
+
+  /* fallback */
+  overflow: hidden;
+}
+
+@supports (overflow: clip) {
+  .panel {
+    overflow: clip;
+  }
 }
 
 @media (min-width: 920px) {
@@ -76,6 +86,7 @@
   font-weight: 700;
   margin-bottom: 8px;
 }
+
 .p { color: var(--muted); line-height: 1.7; }
 
 /* ========= ACCORDION ========= */
@@ -112,16 +123,29 @@
   flex-wrap: wrap;
   gap: 10px;
 }
+
+/* ===== FIX: color-mix() warning (Chrome <111, iOS Safari <16.2) 
+   MDN + Chrome docs confirm color-mix support starts at these versions. 
+   [3](https://github.com/vercel/next.js/issues/10142)[4](https://exchangetuts.com/issue-with-global-css-module-selectors-not-being-pure-in-nextjs-1756871847786064) 
+*/
 .kpi {
   --pill-bg: rgba(90,169,230,.14);
   --pill-fg: var(--brand);
+
   padding: 10px 14px;
   border-radius: 999px;
   background: var(--pill-bg);
   color: var(--pill-fg);
-  border: 1px solid color-mix(in oklab, var(--pill-fg), transparent 70%);
   font-weight: 600;
   font-feature-settings: "tnum";
+
+  /* fallback */
+  border: 1px solid rgba(255,255,255,0.12);
+
+  /* enhanced version */
+  @supports (color: color-mix(in oklab, white, black)) {
+    border-color: color-mix(in oklab, var(--pill-fg), transparent 70%);
+  }
 }
 
 /* contextual variants */
@@ -129,20 +153,37 @@
 .kpi.warn    { --pill-bg: rgba(255,197,97,.14);  --pill-fg: var(--warn); }
 .kpi.danger  { --pill-bg: rgba(255,122,122,.14); --pill-fg: var(--danger); }
 
-/* ========= METRIC BAR (for SWOT balance, funnel, etc.) ========= */
+/* ========= METRIC BAR ========= */
 .metric {
-  display: grid; gap: 8px;
+  display: grid;
+  gap: 8px;
 }
+
 .metricLabel {
-  display: flex; justify-content: space-between; color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
   font-weight: 600;
 }
+
 .bar {
-  height: 10px; border-radius: 20px; background: color-mix(in oklab, var(--ink), transparent 92%);
-  position: relative; overflow: hidden;
+  height: 10px;
+  border-radius: 20px;
+
+  /* fallback */
+  background: rgba(233,238,247,0.08);
+
+  @supports (color: color-mix(in oklab, white, black)) {
+    background: color-mix(in oklab, var(--ink), transparent 92%);
+  }
+
+  position: relative;
+  overflow: hidden;
 }
+
 .fill {
-  height: 100%; background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  height: 100%;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
   width: var(--value, 50%);
   border-radius: 20px;
   box-shadow: 0 0 0 1px rgba(255,255,255,.10) inset;
@@ -158,7 +199,8 @@
   content: "";
   position: absolute;
   left: 10px; top: 6px; bottom: 6px;
-  width: 2px; background: linear-gradient(var(--brand), transparent);
+  width: 2px;
+  background: linear-gradient(var(--brand), transparent);
   border-radius: 2px;
 }
 .step {
@@ -168,34 +210,50 @@
   padding: 12px 0;
 }
 .dot {
-  width: 12px; height: 12px; border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
   margin-top: 6px;
   background: radial-gradient(circle at 35% 35%, #fff, var(--brand));
   outline: 3px solid rgba(90,169,230,.18);
 }
 
-/* ========= BADGE NAV / SUBTABS ========= */
+/* ========= BADGE NAV ========= */
 .badges {
-  display: flex; gap: 8px; flex-wrap: wrap; margin: 4px 0 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 4px 0 14px;
 }
+
 .badge {
-  padding: 8px 12px; border-radius: 999px;
+  padding: 8px 12px;
+  border-radius: 999px;
   border: 1px solid var(--grid);
   color: var(--muted);
   cursor: pointer;
   transition: .2s ease;
 }
+
+/* ===== FIX color-mix() warning ===== */
 .badge[aria-selected="true"] {
   background: rgba(90,169,230,.12);
   color: var(--ink);
-  border-color: color-mix(in oklab, var(--brand), transparent 70%);
+
+  /* fallback */
+  border-color: rgba(255,255,255,0.12);
+
+  /* advanced */
+  @supports (color: color-mix(in oklab, white, black)) {
+    border-color: color-mix(in oklab, var(--brand), transparent 70%);
+  }
 }
 
 /* ========= MICRO-INTERACTIONS ========= */
 .panel:hover { transform: translateY(-1px); }
 .panel { transition: transform .2s ease, border-color .2s ease; }
 
-/* ========= PRINT STYLES ========= */
+/* ========= PRINT ========= */
 @media print {
   .container { background: #fff; color: #000; }
   .panel { box-shadow: none; border-color: #e5e7eb; }

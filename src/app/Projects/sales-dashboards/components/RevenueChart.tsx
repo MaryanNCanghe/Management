@@ -16,6 +16,9 @@ import {
 } from "chart.js";
 import styles from "../SaleStyles.module.scss";
 
+// Pull shared types from your local types file
+import type { DateRange, LeadStage, Currency } from "../types";
+
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend, Filler);
 
 interface RevenueRow {
@@ -24,12 +27,13 @@ interface RevenueRow {
   occurred_at: string;
 }
 
-interface Props {
-  dateRange?: { from?: string; to?: string };
-  currency: "€" | "$" | "£";
-}
+type Props = {
+  dateRange?: DateRange;
+  stages?: LeadStage[];        // <-- added to align with the page call site
+  currency: Currency;          // '€' | '$' | '£'
+};
 
-export default function RevenueChart({ dateRange, currency }: Props) {
+export default function RevenueChart({ dateRange, stages, currency }: Props) {
   const [state, setState] = useState<{ loading: boolean; error?: string; revenue: RevenueRow[] }>({
     loading: true,
     revenue: [],
@@ -51,10 +55,11 @@ export default function RevenueChart({ dateRange, currency }: Props) {
           return;
         }
 
-        setState({ loading: false, revenue: data as RevenueRow[] });
-      } catch (e: any) {
+        setState({ loading: false, revenue: (data as RevenueRow[]) ?? [] });
+      } catch (e: unknown) {
         if (!alive) return;
-        setState({ loading: false, error: e.message, revenue: [] });
+        const msg = e instanceof Error ? e.message : "Unknown error";
+        setState({ loading: false, error: msg, revenue: [] });
       }
     }
 
@@ -64,7 +69,7 @@ export default function RevenueChart({ dateRange, currency }: Props) {
     };
   }, []);
 
-  // FILTER by date only
+  // FILTER by date (you can add stage-based filtering here later if you store stage info in revenue rows)
   const filtered = useMemo(() => {
     return state.revenue.filter((r) => {
       const d = new Date(r.occurred_at);
@@ -76,7 +81,7 @@ export default function RevenueChart({ dateRange, currency }: Props) {
       }
       return true;
     });
-  }, [state.revenue, dateRange]);
+  }, [state.revenue, dateRange /*, stages (add here when you filter by stage) */]);
 
   // GROUP by month
   const byMonth = useMemo(() => {
@@ -121,7 +126,6 @@ export default function RevenueChart({ dateRange, currency }: Props) {
   return (
     <section className={styles.dashboardCard}>
       <h2 className={styles.dashboardTitle}>Total revenue per month</h2>
-
 
       {noData ? (
         <p className={styles.loading}>No data for selected filters.</p>
