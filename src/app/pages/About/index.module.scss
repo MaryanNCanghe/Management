@@ -4,16 +4,31 @@
     flex-direction: column;
     align-items: center;
     color: #000;
+    background-color: #000;
+    background-image: url("../../assets/img/bg1.avif");
+
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+
+
   
     .title {
       text-align: left;
       width: 100%;
       max-width: 1200px;
       margin-bottom: 30px;
+      color: #eceaea;
+      font-size: 15rem;
+
+      
   
       h2 {
-        font-size: 2rem;
+        font-size: 5rem;
         font-weight: bold;
+       color: #eceaea;
+;
+
       }
     }
   
@@ -24,9 +39,11 @@
       margin-bottom: 50px;
   
       p {
-        font-size: 1rem;
+        font-size: 3rem;
         line-height: 1.8;
-        color: #555;
+        color: #eceaea;
+        text-align: start;
+
       }
     }
   
@@ -34,11 +51,13 @@
       width: 100%;
       max-width: 1200px;
       margin-bottom: 50px;
+      
   
       h4 {
-        font-size: 1rem;
+        font-size: 10rem;
         font-weight: bold;
         margin-bottom: 20px;
+        color: #eceaea;
       }
   
       .timeline {
@@ -78,15 +97,17 @@
       text-align: center;
   
       h4 {
-        font-size: 1rem;
+        font-size: 10rem;
         font-weight: bold;
         margin-bottom: 20px;
+       color: #eceaea;
+
       }
   
       p {
-        font-size: 1rem;
+        font-size: 2rem;
         line-height: 1.8;
-        color: #555;
+        color: #fff;
       }
     }
   
@@ -125,11 +146,12 @@
       p {
         font-size: 1rem;
         line-height: 1.8;
-        color: #555;
+        color: #eceaea;
+
       }
   
       .readMoreButton {
-        background-color: #1e5631;
+        background-color: #046971;
         color: white;
         border: none;
         padding: 10px 20px;
@@ -157,9 +179,10 @@
       margin-bottom: 50px;
     
       h4 {
-        font-size: 1rem;
+        font-size: 10rem;
         font-weight: bold;
         margin-bottom: 20px;
+        text-align: start;
       }
     
       .timeline {
@@ -174,7 +197,7 @@
       .square {
         width: 100%;
         height: 100px;
-        background-color: #1e5631;
+        background-color:  #323d33;
         color: white;
         display: flex;
         justify-content: center;
@@ -231,7 +254,7 @@
       text-align: center;
   
       h4 {
-        font-size: 1rem;
+        font-size: 10rem;
         font-weight: bold;
         margin-bottom: 20px;
       }
@@ -239,7 +262,8 @@
       p {
         font-size: 1rem;
         line-height: 1.8;
-        color: #555;
+        color: #eceaea;
+        text-align: end;
       }
     }
   

@@ -1,0 +1,124 @@
+/* SUMMARY CARDS */
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.summaryCard {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+  h3 {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  p {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+/* KPI GRID */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.kpiCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  h3 {
+    color: #6b7280;
+    margin-bottom: 6px;
+  }
+
+  p {
+    font-size: 26px;
+    font-weight: 700;
+  }
+}
+
+/* TABLE */
+.tableWrapper {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+
+  h2 {
+    margin-bottom: 12px;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    background: #f3f4f6;
+    padding: 12px;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  tr:hover {
+    background: #f9fafb;
+  }
+}
+
+/* CHARTS */
+.chartBox {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* FUNNEL */
+.funnelBox {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+
+  h2 {
+    margin-bottom: 14px;
+  }
+}
+
+.funnel {
+  display: grid;
+  gap: 10px;
+}
+
+.funnelStep {
+  padding: 14px;
+  background: #f3f4f6;
+  border-radius: 8px;
+
+  span {
+    color: #6b7280;
+  }
+
+  strong {
+    float: right;
+  }
+}

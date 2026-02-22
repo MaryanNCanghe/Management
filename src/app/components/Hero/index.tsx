@@ -29,17 +29,18 @@ const Hero = () => {
         objectFit="cover"
         className={classes.heroImage}
       />
-      <div className={classes.content}>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Explore my journey in Arts and discover my creative projects.</p>
+      <div className={classes.content}> 
+         <h1>Maria N'canha</h1>
+        <h4>Advisory and management</h4>
+      
 
         <div className={classes.buttonContainer}>
-         // <a
-            //href="/resume.pdf" 
-            //download
-            //className={classes.cvButton}
-         // >
-            Download CV
+         <a
+            href="/resume.png" 
+            download
+           className={classes.cvButton}
+          >
+            download CV
           </a>
         </div>
       </div>

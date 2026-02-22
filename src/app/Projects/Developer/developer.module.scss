@@ -1,0 +1,182 @@
+/* Unified Theme — Matching HR Dashboard Style */
+:root {
+  --bg: #0b1220;
+  --panel: #121a2b;
+  --panel-2: #0f1626;
+  --text: #e6ebf3;
+  --muted: #9fb0c7;
+
+  --accent: #6366f1;   /* Indigo */
+  --accent-2: #22c55e; /* Green */
+  --accent-3: #f59e0b; /* Amber */
+
+  --border: #1e263a;
+}
+
+
+
+/* -------- PAGE -------- */
+.page {
+  padding: clamp(24px, 4vw, 48px);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+}
+
+/* -------- HEADER -------- */
+.header {
+  max-width: 1100px;
+  margin: 0 auto clamp(24px, 4vw, 40px);
+}
+
+.title {
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.1;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.subtitle {
+  font-size: clamp(16px, 2.2vw, 18px);
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.credit {
+  font-size: 14px;
+  color: var(--muted);
+  padding: 8px 12px;
+  border-left: 3px solid var(--accent);
+  background: linear-gradient(90deg, rgba(99,102,241,0.1), transparent 60%);
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* -------- GRID -------- */
+.grid {
+  --col: 3;
+  display: grid;
+  gap: clamp(16px, 2.2vw, 24px);
+  grid-template-columns: repeat(var(--col), minmax(0, 1fr));
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1100px) {
+  .grid { --col: 2; }
+}
+@media (max-width: 680px) {
+  .grid { --col: 1; }
+}
+
+/* -------- CARD -------- */
+.card {
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.06),
+    0 8px 30px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.15),
+    0 12px 40px rgba(0,0,0,0.35);
+}
+
+/* -------- IMAGE -------- */
+.imageWrap {
+  aspect-ratio: 16 / 10;
+  position: relative;
+  background: #0f1626;
+}
+
+.imageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* -------- CARD BODY -------- */
+.cardBody {
+  padding: 18px 16px 20px;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.cardDesc {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* -------- TAGS -------- */
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* -------- BUTTONS -------- */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.button,
+.buttonSecondary {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: background .2s, color .2s, border-color .2s;
+  border: 1px solid transparent;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.button {
+  background: var(--accent);
+  color: white;
+}
+
+.button:hover {
+  filter: brightness(1.1);
+}
+
+.buttonSecondary {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.buttonSecondary:hover {
+  border-color: rgba(99,102,241,0.5);
+  color: var(--accent);
+}

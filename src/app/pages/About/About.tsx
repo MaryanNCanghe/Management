@@ -12,43 +12,33 @@ const About = () => {
   return (
     <section className={classes.about}>
       <div className={classes.title}>
-        <h4>About Me</h4>
+        <h4>ABOUT ME</h4>
       </div>
 
       <div className={classes.presentation}>
-        <p> My name is Maria Ncanghe, and I am a passionate aspiring artist with background in art, music,
-           and design. I also develop websites and designs IU/UX mixing modern technology tools with art. Growing up between different cultures, I have always found inspiration in the intersection of traditions, emotions, and storytelling.
-           I aim to create meaningful experiences that engage the mind and the senses, 
-              while pushing the boundaries of imagination.
-        </p>
-
-        <button onClick={toggleShowMore} className={classes.readMoreButton}>
-          {showMore ? 'Read Less' : 'Read More'}
-        </button>
-
-        {showMore && (
-          <div className={classes.additionalText}>
-            <p>
-            Ever since I was a child, creativity has been at the heart of who I am. Growing up, I immersed myself in the arts, drawn to their power to communicate emotions and stories that words alone could not capture. My journey began with classical music at Luís António Verney, where I spent eight transformative years majoring in violin while also studying piano and theatre. These experiences shaped me, teaching me the beauty of discipline and the magic of performance.
-            This comprehensive training not only honed my technical skills but also shaped my artistic sensibility and passion for creative expression. Through years of practice and dedication, I developed a deep appreciation for the arts and cultivated a strong foundation that continues to inspire my artistic journey.
-            I also have a bachelor in administrative science, having studied at ESCAD Lusófona. This experience provided me with valuable skills in Operations/information management, communication,  financial and HR.
+        <p> I'm Maria N'canha an organized, detail-driven administrative professional with experience in advisory, marketing and stock management. Web developer,
+           design, UI/UX and branding. Supporting entrepreneurs, 
+        ensuring smooth operations and efficiency. I'm proactive, independent, and skilled in handling communication, 
+          documentation, project coordination, finances and digital tools with accuracy and professionalism. With a problem-solving mindset, and fluency in multiple languages, 
+          I bring structure, clarity, and efficiency to every team I work with.</p>
 
 
 
-            </p>
-          </div>
-        )}
       </div>
 
       <hr className={classes.separator} />
 
       <div className={classes.journey}>
-        <h4>My Journey</h4>
+         <div className={classes.title}>
+        <h4>EXPERTISE</h4>
+      </div>
         <div className={classes.timeline}>
-          <div className={classes.square}>Violinist</div>
-          <div className={classes.square}>Visual Arts</div>
-          <div className={classes.square}> Administrative </div>
+          <div className={classes.square}>Marketing</div>
+          <div className={classes.square}>Management</div>
+          <div className={classes.square}> Administrative</div>
           {/* <span className={classes.arrow}>→</span> */}
+          <div className={classes.square}>Graphic Design</div>
+
           <div className={classes.square}>Web Developer</div>
         </div>
       </div>
@@ -56,14 +46,19 @@ const About = () => {
       <hr className={classes.separator} />
 
       <div className={classes.vision}>
-        <h4>My Vision</h4>
-        <p>
-          My work focuses on themes of identity, emotion, atmospheres and connection, often exploring the stories we carry and the emotions we share.
-          I am inspired by everyday moments and human interactions. 
-         I do not paint realism, not because I reject it, but because I’m more interested in the emotional weight of a moment than the literal shape of it. Every brush matters in my work.
-         I don’t hide them, I let them stay visible, especially on skin, where they speak louder than detail.
-I leave figures and faces open so anyone can find themselves into it.
+         <div className={classes.title}>
+        <h4>VISION</h4>
+      </div>
+       <div> <p>
+         I bring hands‑on experience in social media management, content creation, 
+         and brand storytelling, developed through managing personal and client projects across social media. I create visually cohesive content using digital design tools, 
+        ensuring that every post aligns with brand identity and communicates with clarity and aesthetic intention.
+        My background in art and design strengthens my visual judgment, allowing me to craft layouts, banners, 
+        and graphics that are both modern and engaging. I am comfortable working with content calendars, analytics, 
+        and scheduling platforms, including Meta Business Suite and Google tools, allowing me to plan, organize, and evaluate content performance.
+        Whether the goal is visibility, engagement, or brand growth, I approach marketing with creativity, strategic thinking, and consistency.
         </p>
+        </div>
       </div>
     </section>
   );

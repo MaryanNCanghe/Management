@@ -1,0 +1,202 @@
+/* ========= THEME TOKENS ========= */
+:root {
+  --bg: #0f1116;                 /* deep slate */
+  --panel: #141824;              /* card background */
+  --ink: #e9eef7;                /* primary text */
+  --muted: #9aa6b2;              /* secondary text */
+  --brand: #5aa9e6;              /* accent */
+  --brand-2: #7bd389;            /* success accent */
+  --warn: #ffc561;               /* warning accent */
+  --danger: #ff7a7a;             /* danger accent */
+  --grid: rgba(255,255,255,.06); /* subtle divider */
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+
+/* ========= GLOBAL LAYOUT ========= */
+.container {
+  min-height: 100vh;
+  padding: clamp(20px, 3vw, 40px);
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(90,169,230,.10), transparent 60%),
+              radial-gradient(1200px 800px at 90% 110%, rgba(123,211,137,.08), transparent 60%),
+              var(--bg);
+  color: var(--ink);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: end;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: .4px;
+  line-height: 1.1;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 6px;
+  max-width: 70ch;
+}
+
+/* ========= PANELS & GRID ========= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(14px, 2vw, 22px);
+}
+
+.panel {
+  grid-column: span 12;
+  background: linear-gradient(180deg, rgba(255,255,255,.02), transparent),
+              var(--panel);
+  border: 1px solid var(--grid);
+  border-radius: var(--radius);
+  padding: clamp(16px, 2.2vw, 24px);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: clip;
+}
+
+@media (min-width: 920px) {
+  .span-6 { grid-column: span 6; }
+  .span-4 { grid-column: span 4; }
+  .span-8 { grid-column: span 8; }
+}
+
+/* ========= TYPOGRAPHY ========= */
+.h2 {
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.p { color: var(--muted); line-height: 1.7; }
+
+/* ========= ACCORDION ========= */
+.accordion {
+  border-top: 1px dashed var(--grid);
+}
+.accordionItem {
+  border-bottom: 1px dashed var(--grid);
+}
+.accordionBtn {
+  width: 100%;
+  text-align: left;
+  padding: 14px 0;
+  font-weight: 600;
+  color: var(--ink);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+.chev {
+  inline-size: 10px;
+  block-size: 10px;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: rotate(-45deg);
+  transition: transform .25s ease;
+}
+.open .chev { transform: rotate(45deg); }
+.answer { color: var(--muted); padding-bottom: 14px; }
+
+/* ========= KPI CHIPS ========= */
+.kpis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.kpi {
+  --pill-bg: rgba(90,169,230,.14);
+  --pill-fg: var(--brand);
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--pill-bg);
+  color: var(--pill-fg);
+  border: 1px solid color-mix(in oklab, var(--pill-fg), transparent 70%);
+  font-weight: 600;
+  font-feature-settings: "tnum";
+}
+
+/* contextual variants */
+.kpi.success { --pill-bg: rgba(123,211,137,.14); --pill-fg: var(--brand-2); }
+.kpi.warn    { --pill-bg: rgba(255,197,97,.14);  --pill-fg: var(--warn); }
+.kpi.danger  { --pill-bg: rgba(255,122,122,.14); --pill-fg: var(--danger); }
+
+/* ========= METRIC BAR (for SWOT balance, funnel, etc.) ========= */
+.metric {
+  display: grid; gap: 8px;
+}
+.metricLabel {
+  display: flex; justify-content: space-between; color: var(--muted);
+  font-weight: 600;
+}
+.bar {
+  height: 10px; border-radius: 20px; background: color-mix(in oklab, var(--ink), transparent 92%);
+  position: relative; overflow: hidden;
+}
+.fill {
+  height: 100%; background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  width: var(--value, 50%);
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.10) inset;
+  transition: width .6s cubic-bezier(.2,.8,.2,1);
+}
+
+/* ========= STEP TIMELINE ========= */
+.timeline {
+  position: relative;
+  margin-left: 2px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px; top: 6px; bottom: 6px;
+  width: 2px; background: linear-gradient(var(--brand), transparent);
+  border-radius: 2px;
+}
+.step {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 14px;
+  padding: 12px 0;
+}
+.dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  margin-top: 6px;
+  background: radial-gradient(circle at 35% 35%, #fff, var(--brand));
+  outline: 3px solid rgba(90,169,230,.18);
+}
+
+/* ========= BADGE NAV / SUBTABS ========= */
+.badges {
+  display: flex; gap: 8px; flex-wrap: wrap; margin: 4px 0 14px;
+}
+.badge {
+  padding: 8px 12px; border-radius: 999px;
+  border: 1px solid var(--grid);
+  color: var(--muted);
+  cursor: pointer;
+  transition: .2s ease;
+}
+.badge[aria-selected="true"] {
+  background: rgba(90,169,230,.12);
+  color: var(--ink);
+  border-color: color-mix(in oklab, var(--brand), transparent 70%);
+}
+
+/* ========= MICRO-INTERACTIONS ========= */
+.panel:hover { transform: translateY(-1px); }
+.panel { transition: transform .2s ease, border-color .2s ease; }
+
+/* ========= PRINT STYLES ========= */
+@media print {
+  .container { background: #fff; color: #000; }
+  .panel { box-shadow: none; border-color: #e5e7eb; }
+}

@@ -5,23 +5,24 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       <div className={classes.container}>
-        <p className={classes.name}>Maria N'Canghe</p>
+        <p className={classes.name}>Maria N'Canha</p>
         <p className={classes.email}>
           <a href="mailto:mariancanghe@icloud.com">mariancanghe@icloud.com</a>
+        </p>
+        <p className={classes.email}>
+          <a href="">+47 968 40 648</a>
         </p>
         <div className={classes.socialLinks}>
           <a href="https://www.instagram.com/_maryancanghe/" target="_blank" rel="noopener noreferrer">
             Instagram
           </a>
-          <a href="https://github.com/MaryanNCanghe" target="_blank" rel="noopener noreferrer">
-            GitHub
+           <a href="https://www.linkedin.com/in/maria-n-canha-77232a27a/" target="_blank" rel="noopener noreferrer">
+            Linkedin
           </a>
-          <a href="https://soundcloud.com/hakuna-matata-342506249" target="_blank" rel="noopener noreferrer">
-            Soundcloud
-          </a>
+          
         </div>
         <p className={classes.copyright}>
-          &copy; {new Date().getFullYear()} Maria N'canghe. All Rights Reserved.
+          &copy; {new Date().getFullYear()} Maria N'canha. All Rights Reserved.
         </p>
       </div>
     </footer>

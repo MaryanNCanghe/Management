@@ -1,5 +1,5 @@
 .footer {
-    background-color: #1E5631;
+    background-color: #000;
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -13,7 +13,7 @@
     }
   
     .name {
-      font-size: 1.2rem;
+      font-size: 2rem;
       font-weight: bold;
       color: #fff;
     }
@@ -23,7 +23,7 @@
       text-decoration: none;
   
       &:hover {
-        color: #ACDF87;
+        color: #7a7b79;
         text-decoration: underline;
       }
     }
@@ -38,7 +38,7 @@
         transition: color 0.3s ease;
   
         &:hover {
-          color: #ACDF87;
+        color: #7a7b79;
         }
       }
     }
