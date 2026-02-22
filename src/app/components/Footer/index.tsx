@@ -4,10 +4,10 @@ import classes from './index.module.scss';
 const Footer = () => {
   return (
     <footer className={classes.footer}>
-      <div className={classes.container}>
+      <div className={classes.container}>11
         <p className={classes.name}>Maria N'Canha</p>
         <p className={classes.email}>
-          <a href="mailto:mariancanghe@icloud.com">mariancanghe@icloud.com</a>
+          <a href="mailto:hello@mariancanha.com">hello@mariancanha.com</a>
         </p>
         <p className={classes.email}>
           <a href="">+47 968 40 648</a>

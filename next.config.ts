@@ -8,6 +8,12 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
 
+
+  sassOptions: {
+    silenceDeprecations: ['legacy-js-api'],
+  },
+
+
   // (B) Optional: silence Dart Sass legacy API warnings in the short term.
   //     This only hides the warning; the real fix is upgrading the toolchain.
   //     See: https://sass-lang.com/documentation/breaking-changes/legacy-js-api/

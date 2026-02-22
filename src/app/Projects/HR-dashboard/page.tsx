@@ -7,6 +7,9 @@ import KPIAbsence from './components/KPIAbsence';
 import PerformanceDistribution from './components/PerformanceDistribution';
 import EmployeeTable from './components/EmployeeTable';
 
+import { supabase } from '@/lib/supabaseClient';
+
+
 // This page is a Server Component by default — it just renders Client components inside.
 export default function HRDashboardPage() {
   return (
