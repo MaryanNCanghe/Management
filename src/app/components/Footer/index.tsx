@@ -4,7 +4,7 @@ import classes from './index.module.scss';
 const Footer = () => {
   return (
     <footer className={classes.footer}>
-      <div className={classes.container}>11
+      <div className={classes.container}>
         <p className={classes.name}>Maria N'Canha</p>
         <p className={classes.email}>
           <a href="mailto:hello@mariancanha.com">hello@mariancanha.com</a>

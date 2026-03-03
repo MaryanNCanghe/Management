@@ -30,7 +30,7 @@ const Hero = () => {
         className={classes.heroImage}
       />
       <div className={classes.content}> 
-         <h1>Maria N'canha</h1>
+         <h1>Maria N'Canha</h1>
         <h4>Advisory and management</h4>
       
 
